@@ -1,11 +1,11 @@
 __author__ = 'pierrebeldor'
 
-import Chargement
+from Chargement import Chargement
 
 
 class ChargeUniforme(Chargement):
     def __init__(self, charge):
-        super(ChargeUniforme, self).__init__(charge)
+        Chargement.__init__(self, charge)
 
     def calcul_reaction_a(self, longueur, support_type):
         if support_type == 1 or support_type == 4:

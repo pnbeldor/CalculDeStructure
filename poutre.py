@@ -1,8 +1,8 @@
 __author__ = 'pierrebeldor'
 
-import Chargement
-# import ChargeConcentree
-# import ChargeUniforme
+#from Chargement import Chargement
+from ChargeConcentree import ChargeConcentree
+from ChargeUniforme import ChargeUniforme
 
 class Poutre:
     def __init__(self, type_appui, longueur, chargement):
@@ -55,9 +55,9 @@ class Poutre:
             # La charge est de la forme [type, charge] pour la charge uniforme
             # et [type, charge,a] pour la charge concentree
             if charge[0] == 1:
-                chargement = Chargement.ChargeConcentree(charge[1], charge[2])
+                chargement = ChargeConcentree(charge[1], charge[2])
             elif charge[0] == 2:
-                chargement = Chargement.ChargeUniforme(charge[1])
+                chargement = ChargeUniforme(charge[1])
 
             self.__reaction_a += chargement.calcul_reaction_a(self.__longueur, self.__type_appui)
             self.__reaction_b += chargement.calcul_reaction_b(self.__longueur, self.__type_appui)

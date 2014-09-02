@@ -1,12 +1,12 @@
 __author__ = 'Pierre Beldor'
 
-import Chargement
+from Chargement import Chargement
 
 
 class ChargeConcentree(Chargement):
     def __init__(self, charge, dist_from_a):
         self.__dist_from_a = dist_from_a
-        super(ChargeConcentree, self).__init__(charge)
+        Chargement.__init__(self, charge)
 
     def set_dist_from_a(self, dist):
         self.__dist_from_a = dist
